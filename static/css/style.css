@@ -1,0 +1,27 @@
+html{
+    scroll-behavior: smooth;
+}
+
+.navbar-nav li a{
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 10px;
+    text-align: center;
+    margin-left: 35px;
+    color:  rgb(29, 29, 29) !important;
+    text-decoration: none;
+    cursor: pointer !important;
+}
+
+.navbar{
+    -webkit-box-shadow: 0 4px 10px -8px #999;
+    -moz-box-shadow: 0 4px 10px -8px #999;
+    box-shadow: 0 4px 10px -8px #999;
+    z-index:999;
+    background-color: #fff;
+}
+.navbar-nav li a:hover{
+    color:   rgb(255, 17, 176) !important;
+    cursor: pointer !important;
+}
