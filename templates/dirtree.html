@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Download{% endblock %}
+
+{% block content %}
+
+<div class="container">
+<br>
+<h1>Uploads</h1>
+<br>
+    <table class="table table-bordered table-hover">
+            <thead>
+                <th scope="col">File</th>
+                <th scope="col">Open</th>
+            </thead>
+            <tbody>
+                {% for item in tree.children %}
+                    <tr>
+                        <td>{{item.name}}</td>
+                        <td><a class="btn btn-primary" href="/uploads/{{ item.name }}" target="_blank">View</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>  
+</div>
+
+{% endblock %}
