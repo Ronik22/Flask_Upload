@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Register Page{% endblock %}
+
+
+
+{% block content %}
+
+
+<form action="#" method="post" class="form1">
+    <p>Name:</p>
+    <p><input type="text" name="nm" class="form-control" placeholder="Enter your username..."></p>
+    <p>Password:</p>
+    <p><input type="password" class="form-control" name="pwd" placeholder="Enter your password..."></p>
+    <p><input class="btn btn-success" type="submit" value="Submit"></p>
+</form>
+<a href="/login">Login Instead</a>
+{% endblock %}
