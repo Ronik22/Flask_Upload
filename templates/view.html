@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Panel{% endblock %}
+
+
+
+{% block content %}
+
+    <div style="overflow-x: auto;">
+        <table class="table table-bordered table-hover">
+                <thead>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Password</th>
+                    <th scope="col"></th>
+                </thead>
+                <tbody>
+                    {% for item in values %}
+                        <tr>
+                            <th scope="row">{{item.id}}</th>
+                            <td>{{item.name}}</td>
+                            <td>{{item.pwd}}</td>
+                            <td><a class="btn btn-danger" href="/view/delete/{{item.id}}">Delete</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>  
+    </div>
+    
+{% endblock %}
