@@ -12,12 +12,14 @@
             <thead>
                 <th scope="col">File</th>
                 <th scope="col">Open</th>
+                <th scope="col">Delete</th>
             </thead>
             <tbody>
                 {% for item in tree.children %}
                     <tr>
                         <td>{{item.name}}</td>
                         <td><a class="btn btn-primary" href="/uploads/{{ item.name }}" target="_blank">View</a></td>
+                        <td><a class="btn btn-danger" href="/uploads/delete/{{ item.name }}">Delete</a></td>
                     </tr>
                 {% endfor %}
             </tbody>
