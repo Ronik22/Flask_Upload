@@ -132,6 +132,12 @@ def deleteFolder(directory):
     except OSError as e:
         print ("Error: Deleting directory " + directory)
 
+def deleteFile(directory):
+    if os.path.exists(directory):
+        os.remove(directory)
+    else:
+        print("The file does not exist")
+
 @app.route('/upload')
 def index():
     if "user" in session:
@@ -161,6 +167,23 @@ def upload(filename):
     else:
         flash("You are not logged in!",category='danger')
         return redirect(url_for("login"))
+
+@app.route('/uploads/delete/<filename>')
+def deletefile(filename):
+    if "user" in session:
+        user = session["user"]
+        found_user = users.query.filter_by(name=user).first()
+        if found_user:
+            myfile = f"./uploads/{user}/{filename}"
+            deleteFile(myfile)
+            return redirect('/viewuploads')
+        else:
+            flash("Only the author can delete the post",category='danger')
+            return redirect('/viewuploads')
+    else:
+        flash("You are not logged in!",category='danger')
+        return redirect(url_for("login"))
+
 
 @app.route('/viewuploads', methods=['GET'])
 def dirtree():
