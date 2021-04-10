@@ -18,24 +18,30 @@
       
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav ml-auto mt-2 mt-lg-0 ">
+                {% if "user" in session %}
                     <li class="nav-item">
                         <a class="nav-link" href="/upload">Upload Files</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/viewuploads">View Uploads</a>
                     </li>
+                    {% if session["user"] == "admin" %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin">Admin Panel</a>
+                        </li>
+                    {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+
+                {% else %}
                     <li class="nav-item">
                         <a class="nav-link" href="/login">Login</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/register">Register</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/view">View</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/logout">Logout</a>
-                    </li>
+                {% endif %}
             </ul>
         </div>
         </div>

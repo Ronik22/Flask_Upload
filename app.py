@@ -80,7 +80,7 @@ def register():
             return redirect(url_for("upload_files"))
         return render_template("register.html") 
 
-@app.route("/view")     # username: admin, password: admin
+@app.route("/admin")     # username: admin, password: admin
 def view():
     if  "user" in session and session["user"] == "admin":
         return render_template("view.html", values = users.query.all())
